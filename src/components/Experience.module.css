@@ -1,0 +1,67 @@
+.section {
+  padding: 120px 24px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.6rem;
+  margin-bottom: 48px;
+  background: linear-gradient(90deg, #fff, #7dd3fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unit {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #7dd3fc;
+}
+
+.period {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.role {
+  margin: 12px 0 20px;
+  font-size: 1.2rem;
+  color: #e5e7eb;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+}
+
+.list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #7dd3fc;
+}

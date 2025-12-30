@@ -1,0 +1,157 @@
+:root {
+  --bg: #0b0b0b;
+  --fg: #ffffff;
+  --muted: #9ca3af;
+  --accent: #6ee7b7;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      800px 400px at 50% -100px,
+      rgba(110, 231, 183, 0.08),
+      transparent
+    ),
+    var(--bg);
+  color: var(--fg);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ========================
+   MOVING GRID (GLOBAL)
+======================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1; /* behind all content */
+  pointer-events: none;
+  animation: moveGrid 8s linear infinite; /* faster grid */
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 50px 50px, 50px 50px; }
+}
+
+/* ========================
+   MAIN & SECTIONS
+======================== */
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  position: relative;
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+  z-index: 1;
+}
+
+/* Section separator line */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(125, 211, 252, 0.6), rgba(244, 114, 182, 0.6));
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(125, 211, 252, 0.4), 0 0 15px rgba(244, 114, 182, 0.4);
+  z-index: 1;
+}
+
+/* Remove line for last section */
+.section:last-of-type::after {
+  display: none;
+}
+
+/* Muted text style */
+.muted {
+  color: var(--muted);
+}
+
+/* ========================
+   GLOBAL LINKS
+======================== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f472b6;
+}
+
+/* ========================
+   TEXT & HEADINGS
+======================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ========================
+   IMAGES & ICONS
+======================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.icon {
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #7dd3fc, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  main {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+}

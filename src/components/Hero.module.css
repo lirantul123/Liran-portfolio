@@ -1,0 +1,49 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.role {
+  margin-top: 16px;
+  font-size: 1.4rem;
+  color: var(--muted);
+}
+
+.description {
+  margin-top: 40px;
+  max-width: 540px;
+  color: var(--muted);
+}
+
+.links {
+  margin-top: 56px;
+  display: flex;
+  gap: 36px;
+}
+
+.links a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}

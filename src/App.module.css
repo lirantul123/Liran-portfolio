@@ -1,0 +1,377 @@
+/* ========================
+   ROOT LAYOUT
+======================== */
+.app {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================
+   TOP NAV
+======================== */
+.topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background: rgba(15, 17, 26, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 200;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nameLogo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #7dd3fc, #976981);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+  user-select: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navButtons {
+  display: flex;
+  gap: 24px;
+}
+
+.navBtn {
+  position: relative;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* underline pseudo-element */
+.navBtn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  border-radius: 2px;
+  background: #7dd3fc;
+}
+
+/* Active button underline: always visible, no transition */
+.navBtn.activeNavBtn::after {
+  width: 100%;
+  transition: none;
+}
+
+/* Inactive buttons: animate underline on hover only */
+.navBtn:not(.activeNavBtn)::after {
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.navBtn:not(.activeNavBtn):hover::after {
+  width: 80%;
+}
+
+/* Hover color & scale for all buttons */
+.navBtn:hover {
+  color: #7dd3fc;
+  transform: scale(1.1);
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .navButtons {
+    gap: 12px;
+  }
+
+  .navBtn {
+    font-size: 0.9rem;
+  }
+
+  .topNav {
+    padding: 8px 16px;
+  }
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .navButtons {
+    gap: 12px;
+  }
+
+  .navBtn {
+    font-size: 0.9rem;
+  }
+
+  .topNav {
+    padding: 8px 16px;
+  }
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .navButtons {
+    gap: 12px;
+  }
+
+  .navBtn {
+    font-size: 0.9rem;
+  }
+
+  .topNav {
+    padding: 8px 16px;
+  }
+}
+
+/* ========================
+   SIDE BUBBLES
+======================== */
+.sideNav {
+  position: fixed;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 100;
+}
+
+.bubble {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.activeBubble {
+  width: 16px;
+  height: 16px;
+  background: #7dd3fc;
+  box-shadow: 0 0 12px rgba(125, 211, 252, 0.6);
+}
+
+/* ========================
+   MAIN
+======================== */
+.main {
+  scroll-behavior: smooth;
+  padding-top: 64px; /* space for top nav */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ========================
+   SECTIONS
+======================== */
+.section {
+  position: relative;
+  padding: 140px 24px;
+  margin: auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  z-index: 1;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.section:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.section:nth-child(even) {
+  background-color: rgba(125, 211, 252, 0.02);
+}
+
+/* Section title */
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  background: linear-gradient(90deg, #fff, #7dd3fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Section separator line */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(125, 211, 252, 0.6), rgba(244, 114, 182, 0.6));
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(125, 211, 252, 0.4), 0 0 15px rgba(244, 114, 182, 0.4);
+  z-index: 1;
+}
+
+.section:last-of-type::after {
+  display: none;
+}
+
+/* ========================
+   CARDS
+======================== */
+.card {
+  padding: 1.5em;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  font-weight: 500;
+  color: #e5e7eb;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(125, 211, 252, 0.3);
+}
+
+.icon {
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #7dd3fc, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* ========================
+   GRID (Stack section)
+======================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+}
+
+/* ========================
+   CONTACT SECTION
+======================== */
+.contactInfo {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-top: 16px;
+}
+
+.socialLinks {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.socialIcon {
+  font-size: 2rem;
+  color: var(--fg);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #7dd3fc;
+  transform: scale(1.2);
+}
+
+.email {
+  color: #7dd3fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email:hover {
+  color: #f472b6;
+}
+
+/* ========================
+   MOVING GRID BACKGROUND
+======================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
+  animation: moveGrid 6s linear infinite;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 50px 50px, 50px 50px; }
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .main {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 100px 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 1em;
+    border-radius: 12px;
+  }
+
+  .topNav {
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .navBtn {
+    font-size: 0.9rem;
+  }
+}

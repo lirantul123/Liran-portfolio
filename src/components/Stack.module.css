@@ -1,0 +1,46 @@
+.section {
+  padding: 80px 24px; /* less vertical padding */
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.2rem; /* smaller title */
+  margin-bottom: 32px;
+  background: linear-gradient(90deg, #fff, #7dd3fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* smaller cards */
+  gap: 16px; /* tighter spacing */
+}
+
+.card {
+  padding: 16px; /* smaller padding */
+  border-radius: 12px; /* slightly smaller radius */
+  background: rgba(255, 255, 255, 0.03); /* subtle glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-weight: 500;
+  color: #e5e7eb;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* smaller gap between icon and text */
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 15px 30px rgba(125, 211, 252, 0.2);
+}
+
+.icon {
+  font-size: 1.5rem; /* smaller icons */
+  color: #7dd3fc;
+}
