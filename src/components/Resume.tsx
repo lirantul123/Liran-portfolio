@@ -40,7 +40,7 @@ export default function Resume({ id }: ResumeProps) {
         <button
           className={`${styles.navBtn} ${styles.funnyBtn}`}
           onClick={() =>
-            alert("Surprise!\n10000$ were taken from your main PayPal account ☕")
+            alert("Surprise!\nRocky4 is the best movie in the series☕")
           }
           title="Click me for a surprise!"
         >
