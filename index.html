@@ -1,13 +1,340 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/data.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>liran-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Liran Tul | Full Stack Developer</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="icon" type="image/svg+xml" href="data.png" />
+
+  <link rel="stylesheet" href="index.css">
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">LT.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Available for work</div>
+    <h1 class="hero-name">
+      <span>Liran</span>
+      <span class="accent-text">Tul</span>
+    </h1>
+    <p class="hero-desc">Full Stack Developer crafting fast, scalable, and elegant digital products from backend logic to pixel-perfect interfaces.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-3d-container">
+    <div class="hologram-frame">
+      <div class="frame-corner top-left"></div>
+      <div class="frame-corner top-right"></div>
+      <div class="frame-corner bottom-left"></div>
+      <div class="frame-corner bottom-right"></div>
+      <div class="hologram-lines"></div>
+    </div>
+    
+    <model-viewer 
+      id="hero-model"
+      src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+      alt="3D Model" 
+      auto-rotate
+      disable-zoom
+      disable-tap
+      camera-controls 
+      shadow-intensity="1" 
+      environment-image="neutral" 
+      exposure="1"
+      bounds="tight"
+      min-field-of-view="33deg">
+    </model-viewer>
+  
+    <div class="model-controls">
+      <button class="active" onclick="switchModel('https://modelviewer.dev/shared-assets/models/Astronaut.glb', 'Astronaut')">👨‍🚀 Character</button>
+      <button onclick="switchModel('https://modelviewer.dev/shared-assets/models/glTF-Sample-Assets/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb', 'Helmet')">🪖 Tech</button>
+    </div>
+  </div>
+
+  <div class="hero-counter">
+    <div class="counter-item">
+      <div class="counter-num">2+</div>
+      <div class="counter-label">Years Exp.</div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<section id="about">
+  <div class="section-label">// 01 — About</div>
+  <h2 class="section-title">The person <span class="dim">behind the code</span></h2>
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-avatar">LT</div>
+        <div class="about-name-card">Liran Tul</div>
+        <div class="about-role-card">Full Stack Developer</div>
+        <p style="font-size:0.85rem;color:var(--muted);font-family:'DM Mono',monospace">Based in Israel 🇮🇱 · Open to Remote</p>
+        <div class="about-stat-row">
+          <div class="about-stat"><div class="about-stat-n">2+</div><div class="about-stat-l">Years coding</div></div>
+          <div class="about-stat"><div class="about-stat-n">10+</div><div class="about-stat-l">Projects built</div></div>
+          <div class="about-stat"><div class="about-stat-n">Full</div><div class="about-stat-l">Stack capable</div></div>
+          <div class="about-stat"><div class="about-stat-n">∞</div><div class="about-stat-l">Drive to learn</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p>Hey — I'm Liran, a Full Stack Developer who loves turning ideas into real, working software. I care deeply about clean code, great UX, and building things that actually matter.</p>
+      <p>I work across the entire stack — from designing robust APIs and databases on the backend, to building smooth, responsive interfaces on the frontend. Every layer of the stack is an opportunity to do something well.</p>
+      <p>Currently looking for opportunities where I can grow fast, ship meaningful products, and work with a team that cares about craft.</p>
+      <div class="about-tags">
+        <span class="tag">Problem Solver</span>
+        <span class="tag">Fast Learner</span>
+        <span class="tag">Team Player</span>
+        <span class="tag">Detail-Oriented</span>
+        <span class="tag">Open Source</span>
+        <span class="tag">Clean Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">// 02 — Skills</div>
+  <h2 class="section-title">My <span class="dim">technical toolkit</span></h2>
+  <div class="skills-grid">
+    <div class="skill-category fade-up stagger-2" style="border-color:rgba(200,255,0,0.2);background:rgba(200,255,0,0.03)">
+      <div class="skill-cat-icon">🛠</div>
+      <div class="skill-cat-title">Backend</div>
+      <div class="skill-cat-desc">Scalable, reliable server-side logic</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Node.js</span><span class="skill-pill">Express</span><span class="skill-pill">Python</span><span class="skill-pill">REST APIs</span><span class="skill-pill">GraphQL</span><span class="skill-pill">JWT Auth</span>
+      </div>
+    </div>
+    <div class="skill-category fade-up stagger-1">
+      <div class="skill-cat-icon">⚡</div>
+      <div class="skill-cat-title">Frontend</div>
+      <div class="skill-cat-desc">Building interfaces users love</div>
+      <div class="skill-pills">
+        <span class="skill-pill">React</span><span class="skill-pill">JavaScript</span><span class="skill-pill">TypeScript</span><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Tailwind</span><span class="skill-pill">Next.js</span>
+      </div>
+    </div>
+    <div class="skill-category fade-up stagger-3">
+      <div class="skill-cat-icon">🗄️</div>
+      <div class="skill-cat-title">Databases</div>
+      <div class="skill-cat-desc">Structured & flexible data storage</div>
+      <div class="skill-pills">
+        <span class="skill-pill">MongoDB</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MySQL</span><span class="skill-pill">Redis</span><span class="skill-pill">Mongoose</span>
+      </div>
+    </div>
+    <div class="skill-category fade-up stagger-1">
+      <div class="skill-cat-icon">☁️</div>
+      <div class="skill-cat-title">DevOps & Cloud</div>
+      <div class="skill-cat-desc">Shipping and scaling in the cloud</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Docker</span><span class="skill-pill">Git</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Vercel</span><span class="skill-pill">Linux</span>
+      </div>
+    </div>
+    <div class="skill-category fade-up stagger-2">
+      <div class="skill-cat-icon">🔧</div>
+      <div class="skill-cat-title">Tools & Methods</div>
+      <div class="skill-cat-desc">Working smart, not just hard</div>
+      <div class="skill-pills">
+        <span class="skill-pill">VS Code</span><span class="skill-pill">Postman</span><span class="skill-pill">Figma</span><span class="skill-pill">Agile</span><span class="skill-pill">Jira</span>
+      </div>
+    </div>
+    <div class="skill-category fade-up stagger-3" style="border-color:rgba(200,255,0,0.2);background:rgba(200,255,0,0.03)">
+      <div class="skill-cat-icon">🚀</div>
+      <div class="skill-cat-title">Currently Learning</div>
+      <div class="skill-cat-desc">Always growing, never stopping</div>
+      <div class="skill-pills">
+        <span class="skill-pill">AWS</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">System Design</span><span class="skill-pill">WebSockets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">// 03 — Projects</div>
+  <h2 class="section-title">Things I've <span class="dim">built</span></h2>
+  <div class="projects-grid">
+    <div class="project-card featured fade-up">
+      <div class="project-thumb">
+        <svg class="project-thumb-pattern" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p1" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="#c8ff00"/></pattern></defs><rect width="800" height="300" fill="url(#p1)"/></svg>
+        <div class="project-thumb-label">PROJECT 01</div>
+        <div class="project-accent" style="background:linear-gradient(90deg,#c8ff00,#00e5ff)"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Full Stack · Featured</span>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Live ↗</a>
+          </div>
+        </div>
+        <div class="project-title">Your Featured Project</div>
+        <div class="project-desc">A powerful full-stack application that demonstrates your ability to build end-to-end solutions. Handles authentication, real-time data, and a polished user experience.</div>
+        <div class="project-stack">
+          <span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span><span class="stack-tag">JWT</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card fade-up stagger-1">
+      <div class="project-thumb">
+        <svg class="project-thumb-pattern" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p2" width="30" height="30" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="30" y2="30" stroke="#00e5ff" stroke-width="0.5"/></pattern></defs><rect width="400" height="220" fill="url(#p2)"/></svg>
+        <div class="project-thumb-label">02</div>
+        <div class="project-accent" style="background:linear-gradient(90deg,#00e5ff,#c8ff00)"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Backend · API</span>
+          <div class="project-links"><a href="#" class="project-link">GitHub</a></div>
+        </div>
+        <div class="project-title">REST API Project</div>
+        <div class="project-desc">A robust RESTful API with full CRUD operations, middleware, and proper error handling.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Node.js</span><span class="stack-tag">Express</span><span class="stack-tag">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card fade-up stagger-2">
+      <div class="project-thumb">
+        <svg class="project-thumb-pattern" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p3" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="none" stroke="#c8ff00" stroke-width="0.4"/></pattern></defs><rect width="400" height="220" fill="url(#p3)"/></svg>
+        <div class="project-thumb-label">03</div>
+        <div class="project-accent" style="background:linear-gradient(90deg,#c8ff00,#ff6b6b)"></div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Frontend · React</span>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Live ↗</a>
+          </div>
+        </div>
+        <div class="project-title">React Application</div>
+        <div class="project-desc">A modern, responsive React app with state management, API integration, and a clean UI.</div>
+        <div class="project-stack">
+          <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Tailwind</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">// 04 — Experience</div>
+  <h2 class="section-title">Where I've <span class="dim">been</span></h2>
+  <div class="timeline">
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 — Present</div>
+      <div class="timeline-company">Your Current Role / Project</div>
+      <div class="timeline-role">Full Stack Developer</div>
+      <div class="timeline-desc">Describe what you built, what problems you solved, and the impact you had. Focus on outcomes — not just tasks.</div>
+      <div class="timeline-tags">
+        <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+      </div>
+    </div>
+    <div class="timeline-item fade-up stagger-1">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2023 — 2024</div>
+      <div class="timeline-company">Previous Company / Bootcamp / Project</div>
+      <div class="timeline-role">Junior Developer / Student Project</div>
+      <div class="timeline-desc">What did you learn? What did you contribute? Keep it honest and concrete — even bootcamp and personal projects count.</div>
+      <div class="timeline-tags">
+        <span class="tag">JavaScript</span><span class="tag">Express</span><span class="tag">SQL</span>
+      </div>
+    </div>
+    <div class="timeline-item fade-up stagger-2">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2022 — 2023</div>
+      <div class="timeline-company">Learning & Building</div>
+      <div class="timeline-role">Self-taught Developer</div>
+      <div class="timeline-desc">Started the journey — learning algorithms, building small projects, and discovering a passion for software development.</div>
+      <div class="timeline-tags">
+        <span class="tag">HTML/CSS</span><span class="tag">Python</span><span class="tag">Algorithms</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">// 05 — Contact</div>
+    <h2 class="section-title">Let's build <span class="dim">something</span></h2>
+    <p>Open to full-time roles, freelance projects, and interesting collaborations. If you have an idea or an opportunity — I'd love to hear about it.</p>
+    <div class="contact-actions">
+      <a href="mailto:lira.tulchin@gmail.com" class="btn-primary">Send Me an Email</a>
+      <a href="https://github.com/lirantul123" class="btn-outline" target="_blank">GitHub ↗</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/lirantul" class="contact-link">LinkedIn</a>
+      <a target="_blank" href="https://github.com/lirantul123" class="contact-link">GitHub</a>
+      <a href="mailto:liran@email.com" class="contact-link">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">LT.</div>
+  <div class="footer-copy">© 2025 Liran Tul — Built with craft & coffee.</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 50 ? 'rgba(10,10,10,0.95)' : 'rgba(10,10,10,0.85)';
+  });
+
+  function switchModel(url, altText) {
+    const viewer = document.getElementById('hero-model');
+    viewer.src = url;
+    viewer.alt = altText;
+
+    viewer.addEventListener('load', () => {
+      viewer.cameraOrbit = "auto auto auto";
+      viewer.jumpCameraToGoal();
+    }, { once: true });
+
+    const buttons = document.querySelectorAll('.model-controls button');
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.innerText.includes(altText));
+    });
+  }
+</script>
+</body>
 </html>
